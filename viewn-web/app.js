@@ -16,7 +16,6 @@ app.set('view engine', 'pug');
 
 // uncomment after placing your favicon in /static
 //app.use(favicon(path.join(__dirname, 'static', 'favicon.ico')));
-app.use(cors());
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));

@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var urljoin = require('url-join');
-var Base64 = require('../src/javascripts/base64');
+var Base64 = require('../src/javascript/base64');
 
 /* Handles GET requests to the video page */
 router.get('/', function(req, res, next) {

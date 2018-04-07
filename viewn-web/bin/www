@@ -16,6 +16,15 @@ var port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
 
 /**
+ * Custom App-global variables, and make the request-json client
+ * global too
+ */
+
+app.locals.API_ENDPOINT = process.env.API || 'localhost:3000';
+app.locals.VID_ENDPOINT = process.env.VID || 'localhost:3001';
+app.locals.client = require('request-json').createClient(app.locals.API_ENDPOINT);
+
+/**
  * Create HTTP server.
  */
 
@@ -28,6 +37,15 @@ var server = http.createServer(app);
 server.listen(port);
 server.on('error', onError);
 server.on('listening', onListening);
+
+/**
+ * Initialize socket.io for timestamp updates, and include the REST
+ * client to commit updates
+ */
+
+var socketServer = require('../server/socketioAPI')(app.locals.client).socketServer;
+socketServer.attach(server);
+
 
 /**
  * Normalize a port into a number, string, or false.
