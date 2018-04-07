@@ -6,3 +6,4 @@
  
   - static - public static resources (stylsheets, webpack output, images)
   - src - public resources, but to be compiled with webpack
+  - server - code for server dependencies
