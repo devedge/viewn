@@ -4,7 +4,9 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "dev": "DEBUG=viewn-web:* nodemon ./bin/www"
+    "dev": "DEBUG=viewn-web:* nodemon ./bin/www",
+    "build": "webpack-cli --config webpack.config.js --mode production --optimize-minimize",
+    "webpack": "webpack-cli --watch --config webpack.config.js --mode development"
   },
   "dependencies": {
     "body-parser": "~1.18.2",
@@ -22,6 +24,9 @@
     "url-join": "^4.0.0"
   },
   "devDependencies": {
+    "css-loader": "^0.28.11",
+    "style-loader": "^0.20.3",
+    "uglifyjs-webpack-plugin": "^1.2.4",
     "webpack": "^4.5.0"
   }
 }

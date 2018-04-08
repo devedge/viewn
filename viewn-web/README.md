@@ -4,6 +4,10 @@
   - Installed `npm install --save bulma plyr request-json socket.io socket.io socket.io-client url-join`
   - Installed `npm install --save-dev webpack`
 
-  - static - public static resources (stylsheets, webpack output, images)
-  - src - public resources, but to be compiled with webpack. shared library includes here too
-  - server - code for explicit server dependencies
+## Directories
+  - static 
+    - Static public resource: (images, webpack builds)
+  - src
+    - Public/shared imports for the frontend, from where webpack builds are created
+  - server
+    - Server-side code only. Currently includes SocketIO API
