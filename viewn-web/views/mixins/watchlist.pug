@@ -1,0 +1,12 @@
+mixin watchlist(videolist)
+  //- div= videolist[0].title
+
+  each item in videolist
+    a(class='watch-next-item' href=item.video_link)
+      div(class='watch-next-thumbnail')
+        img(class='video-poster rounded-image' width='140px' src=item.poster)
+      div(class='watch-next-title')
+        div(class='title is-size-6')= item.title
+        div(class='subtitle is-size-7-touch is-size-6 has-text-weight-normal has-text-grey') 
+          div Uploader Info
+          div 12854 Views

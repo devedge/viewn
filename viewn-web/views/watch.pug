@@ -1,0 +1,20 @@
+extends layout
+
+block append headers
+  script(id='pagedata' type='application/json') #{pagedata}
+
+block content
+  div(class='section is-paddingless')
+    video(id='video-player' poster=video_poster)
+      source(src=video_link type=video_type)
+
+  div(class='section')
+    div(class='container')
+      div(class='neg-margin')
+        heading(class='subtitle is-size-5')= video_title
+        p(class='has-text-weight-semibold has-text-grey-darker is-size-6') TestUserName
+
+  hr(class='neg-margin')
+
+  //- Load Plyr and hls.js
+  script(src='/dist/video.bundle.js')
