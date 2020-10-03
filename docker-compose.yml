@@ -1,0 +1,8 @@
+version: "3"
+services:
+  serv:
+    build: serv/
+    ports:
+      - 8100:8100
+    volumes:
+      - ~/viewn-content:/mnt/content:rw
