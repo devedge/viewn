@@ -4,5 +4,12 @@ npm-debug.log*
 # Dependency directories
 node_modules/
 
+# Configs
+package-lock.json
+
 # dotenv environment variables file
 .env
+
+# Misc
+.DS_store
+
