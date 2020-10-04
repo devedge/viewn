@@ -3,6 +3,7 @@ services:
   # static file/content server
   serv:
     build: serv/
+    restart: unless-stopped
     ports:
       - 8100:8100
     volumes:
@@ -11,7 +12,7 @@ services:
   # postgres db. environment variables are in .env
   postgres:
     image: postgres:13-alpine
-    restart: always
+    restart: unless-stopped
     environment:
       - POSTGRES_DB=${POSTGRES_DB}
       - POSTGRES_USER=${POSTGRES_USER}
@@ -24,6 +25,7 @@ services:
   # rest api stood up in front of postgres
   api:
     build: api/
+    restart: unless-stopped
     depends_on:
       - postgres
     ports:
